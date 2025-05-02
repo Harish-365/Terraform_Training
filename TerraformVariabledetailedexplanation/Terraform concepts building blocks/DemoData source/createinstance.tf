@@ -18,4 +18,5 @@ resource "aws_instance" "Myfirstinstance" {
   ami = data.aws_ami.latest-ubuntu.id
   instance_type = "t2.micro"
  availability_zone = data.aws_availability_zones.available.names[5]
+ vpc_security_group_ids = [aws_security_group.sg_custom_security.id]
 }
