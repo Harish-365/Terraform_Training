@@ -4,7 +4,7 @@ data "aws_ip_ranges" "us_east_ip_range" {
 }
 
 resource "aws_security_group" "sg_custom_security" {
-    name = sg_custom_security
+    name = "sg_custom_security"
     ingress {
         from_port = "443"
         to_port = "443"
