@@ -14,8 +14,8 @@ provisioner "file"{
 
 provisioner "remote-exec"{
   inline = [
-    "chmod +x /tmp/INstalllNginix.sh"
-    "sudo sed -i -e 's/\r$//' /tmp/INstalllNginix.sh"
+    "chmod +x /tmp/INstalllNginix.sh",
+    "sudo sed -i -e 's/\r$//' /tmp/INstalllNginix.sh",
     "sudo /tmp/INstalllNginix.sh"
   ]
 }
