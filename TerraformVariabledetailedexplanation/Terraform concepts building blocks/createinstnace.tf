@@ -1,5 +1,5 @@
 resource "aws_key_pair" "levelup_key" {
-  key_name = levelup_key
+  key_name = "levelup_key"
   public_key = file(var.AWS_PUBLICKEY)
 }
 
