@@ -7,8 +7,6 @@ resource "aws_instance" "Myfirstinstance" {
   ami = lookup(var.AMIS, var.AWS_REGION)
   instance_type = "t2.micro"
   key_name      = aws_key_pair.levelup_key.key_name
-}
-
 provisioner "file"{
   source = "INstalllNginix.sh"
   destination = "/tmp/INstalllNginix.sh"
@@ -27,4 +25,5 @@ connection {
   type = ssh
   user = var.INSTANCE_USERNAME
   private_key = file(var.AWS_PRIVATEKEY)
+}
 }
