@@ -17,5 +17,5 @@ filter {
 resource "aws_instance" "Myfirstinstance" {
   ami = data.aws_ami.latest-ubuntu.id
   instance_type = "t2.micro"
- availability_zone = data.aws_availability_zones.available.names[1]
+ availability_zone = data.aws_availability_zones.available.names[0]
 }
