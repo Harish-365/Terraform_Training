@@ -22,7 +22,7 @@ provisioner "remote-exec"{
 
 connection {
   host = coalesce(self.public_ip, self.private_ip)
-  type = ssh
+  type = "ssh"
   user = var.INSTANCE_USERNAME
   private_key = file(var.AWS_PRIVATEKEY)
 }
