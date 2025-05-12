@@ -36,8 +36,7 @@ resource "aws_subnet" "levelupvpc-private-1" {
 
 ##Internet Gatewat
 resource "aws_internet_gateway" "internet_gw" {
-  vpc_id = ws_vpc.levelup_vpc.id
-
+  vpc_id = aws_vpc.levelup_vpc.id
   tags = {
     Name = "internet_gw"
   }
