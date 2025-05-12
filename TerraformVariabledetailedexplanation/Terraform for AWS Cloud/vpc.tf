@@ -25,7 +25,7 @@ resource "aws_subnet" "levelupvpc-public-1" {
 ##Private subnet
 resource "aws_subnet" "levelupvpc-private-1" {
   vpc_id     = aws_vpc.levelup_vpc.id
-  cidr_block = "10.0.1.0/24" ##10.0.1.255
+  cidr_block = "10.0.1.0/24" ##10.0.2.255
   map_public_ip_on_launch = "false" ## this will automatically sets the public IP
   availability_zone = "us-east-1f"
 
