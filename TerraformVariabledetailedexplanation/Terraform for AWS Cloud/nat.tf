@@ -29,6 +29,6 @@ resource "aws_route_table" "levelup-private" {
 
 ##Routing association: Assigns a subnet to a specific route table.
 resource "aws_route_table_association" "levelup-private-1a" {
-  subnet_id      = aws_subnet.levelupvpc-private-1
-  route_table_id = aws_route_table.levelup-private
+  subnet_id      = aws_subnet.levelupvpc-private-1.id
+  route_table_id = aws_route_table.levelup-private.id
 }
