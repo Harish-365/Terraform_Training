@@ -5,7 +5,7 @@ resource "aws_key_pair" "levelup_key" {
 
 resource "aws_instance" "Myfirstinstance" {
     ami = lookup(var.AMIS, var.AWS_REGION)
-    vpc_security_group_ids = aws_security_group.levelup-security
+    vpc_security_group_ids = [aws_security_group.levelup-security.id]
     instance_type = "t2.micro"
     key_name      = aws_key_pair.levelup_key.key_name 
     subnet_id = aws_subnet.levelupvpc-public-1.id
