@@ -7,7 +7,7 @@ resource "aws_instance" "Myfirstinstance" {
     ami = lookup(var.AMIS, var.AWS_REGION)
     instance_type = "t2.micro"
     key_name      = aws_key_pair.levelup_key.key_name 
-    user_data = file("installapache.sh")
+    user_data = data.template_cloud_config.install-apache-config.rendered
 
     tags = {
         Name = "Myfirstinstance"
