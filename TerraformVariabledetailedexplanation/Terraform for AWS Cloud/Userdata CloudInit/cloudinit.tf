@@ -16,7 +16,7 @@ data "template_file" "install-apache" {
 ##- base64_encode = false → Stores the config as plain text instead of encoding it
 
 
-data "template_cloud_config" "install-apache-config" { 
+data "template_cloudinit_config" "install-apache-config" { 
     gzip = false
     base64_encode = false
 
