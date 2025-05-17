@@ -40,3 +40,8 @@ resource "aws_db_instance" "MariaDB" {
     }
 
 }
+
+output "rds" {
+  value = aws_db_instance.MariaDB.endpoint
+  
+}
