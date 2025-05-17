@@ -26,8 +26,8 @@ resource "aws_db_instance" "mariadb" {
     identifier = "mariadb"
     username = "root"
     password = "mariadb141"
-    db_subnet_group_name = aws_db_subnet_group.MariaDB-subnet.name
-    parameter_group_name = aws_db_parameter_group.MariaDB-parameter.name
+    db_subnet_group_name = aws_db_subnet_group.mariadb-subnet.name
+    parameter_group_name = aws_db_parameter_group.mariadb-parameter.name
     multi_az = "false"
     vpc_security_group_ids = [aws_security_group.security-mariadb.id]
     storage_type = "gp2"

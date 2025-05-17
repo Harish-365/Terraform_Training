@@ -42,20 +42,20 @@ resource "aws_subnet" "levelup-private-2" {
   }
 }
 
-resource "aws_internet_gateway" "Internet-gw" {
+resource "aws_internet_gateway" "internet-gw" {
   vpc_id = aws_vpc.levelup_vpc.id
   
   tags = {
-    Name = "Internet-gw"
+    Name = "internet-gw"
     }
 }
 
 resource "aws_route_table" "levelup-public" {
   vpc_id = aws_vpc.levelup_vpc.id
   
-  route = {
+  route {
     cidr_block = "0.0.0.0/0"
-    gateway_id = aws_internet_gateway.Internet-gw.id    
+    gateway_id = aws_internet_gateway.internet-gw.id    
   }
   tags = {
     Name = "levelup-public"
