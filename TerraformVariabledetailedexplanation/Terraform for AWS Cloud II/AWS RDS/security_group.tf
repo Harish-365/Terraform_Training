@@ -21,8 +21,8 @@ resource "aws_security_group" "levelup-security" {
 }
 
 ## security group for MariaDB
-resource "aws_security_group" "security-MariaDB" {
-    name = "security-MariaDB"
+resource "aws_security_group" "security-mariadb" {
+    name = "security-mariadb"
     vpc_id = aws_vpc.levelup_vpc
     
     egress {
@@ -39,6 +39,6 @@ resource "aws_security_group" "security-MariaDB" {
         security_groups = [aws_security_group.levelup-security.id]
     }
     tags = {
-      Name = "security-MariaDB"
+      Name = "security-mariadb"
     }
 }

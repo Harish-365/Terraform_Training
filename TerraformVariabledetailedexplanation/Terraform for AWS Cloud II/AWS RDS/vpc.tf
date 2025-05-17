@@ -58,7 +58,7 @@ resource "aws_route_table" "levelup-public" {
     gateway_id = aws_internet_gateway.Internet-gw.id    
   }
   tags = {
-    Name =levelup-public
+    Name = "levelup-public"
   }
 }
 
