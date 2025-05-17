@@ -23,7 +23,7 @@ resource "aws_security_group" "levelup-security" {
 ## security group for MariaDB
 resource "aws_security_group" "security-mariadb" {
     name = "security-mariadb"
-    vpc_id = aws_vpc.levelup_vpc
+    vpc_id = aws_vpc.levelup_vpc.id
     
     egress {
         from_port = 0
