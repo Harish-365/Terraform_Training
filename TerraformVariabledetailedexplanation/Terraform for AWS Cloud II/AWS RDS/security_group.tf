@@ -1,6 +1,6 @@
 resource "aws_security_group" "levelup-security" {
     name = "levelup-security"
-    vpc_id = aws_vpc.levelup_vpc
+    vpc_id = aws_vpc.levelup_vpc.id
     
     egress {
         from_port = 0
