@@ -21,7 +21,7 @@ resource "aws_nat_gateway" "levelup-nat-gw" {
 
   # To ensure proper ordering, it is recommended to add an explicit dependency
   # on the Internet Gateway for the VPC.
-  depends_on = [aws_internet_gateway.internet_gw]
+  depends_on = [aws_internet_gateway.internet_gw] ## it is list and it is dependent on other resources like internet gateway and it ensures Internet gateway is present too and that why is inside [] 
 }
 
 resource "aws_route_table" "levelup-private" {

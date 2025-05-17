@@ -27,7 +27,7 @@ data "template_cloudinit_config" "install-apache-config" {
 
     part {
         filename = "init.cfg"
-        content_type = "text/cloud-config"
+        content_type = "text/cloud-config" 
         content = data.template_file.install-apache.rendered
     }
 

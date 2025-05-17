@@ -31,6 +31,7 @@ resource "aws_ebs_volume" "ebs-volume" {
 resource "aws_volume_attachment" "ebs-volume-1" {
     instance_id = aws_instance.Myfirstinstance.id
     volume_id = aws_ebs_volume.ebs-volume.id
-    device_name = "/dev/xvdh"
+    device_name = "/dev/xvdh"  ## need to create a file system on the machine and do the swap then only it will reflect 
+    ## for creating file system : mkfs .ext4 /dev/xvdh ## here ext4 is the file system extension
   
 }
