@@ -8,7 +8,7 @@ resource "aws_db_subnet_group" "mariadb-subnet" {
 ## RDS parameter
 resource "aws_db_parameter_group" "mariadb-parameter" {
   name = "mariadb-parameter"
-  family = "mariadb10.4"
+  family = "mariadb10.11"
 
   parameter {
     name = "max_allowed_packet"
@@ -21,7 +21,7 @@ resource "aws_db_parameter_group" "mariadb-parameter" {
 resource "aws_db_instance" "mariadb" {
     allocated_storage = 20  ## 20 GB of storage
     engine = "mariadb"
-    engine_version = "10.4.8"
+    engine_version = "10.11.11"
     instance_class = "db.t2.micro"
     identifier = "mariadb"
     username = "root"
