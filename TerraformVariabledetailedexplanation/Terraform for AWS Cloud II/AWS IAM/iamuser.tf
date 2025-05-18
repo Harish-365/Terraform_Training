@@ -33,6 +33,7 @@ resource "aws_iam_policy_attachment" "admin-user-attachment" {
   groups = [aws_iam_group.admingroup.name]
   policy_arn = "arn:aws:iam::aws:policy/AdministratorAccess"
 }
+### syntax for ARN: arn:partition:service:region:account-id:resource
 
 # Let's break this ARN (Amazon Resource Name) down step by step:
 # 1️⃣ arn: → This is the prefix for all AWS resource identifiers.
