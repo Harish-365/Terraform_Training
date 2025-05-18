@@ -17,20 +17,23 @@ resource "aws_key_pair" "levelup_key" {
 # ✅ Helps when scaling multiple resources dynamically.
 
 ##Launch configuration:
-resource "aws_launch_configuration" "levelup-launch-configuration" {
-    name_prefix = "levelup-launch-configuration"
-    image_id = lookup(var.AMIS,var.AWS_REGION)
-    instance_type = "t2.micro"
-    key_name = aws_key_pair.levelup_key.key_name
-
+resource "aws_launch_template" "levelup-launch-template" {
+  name_prefix   = "levelup-launch-template"
+  image_id      = lookup(var.AMIS, var.AWS_REGION)
+  instance_type = "t2.micro"
+  key_name      = aws_key_pair.levelup_key.key_name
 }
 
 ## Auto scaling group:
 
 resource "aws_autoscaling_group" "levelup-autoscaling" {
     name = "levelup-autoscaling"
-    vpc_zone_identifier = ["us-east-1e", "us-east-1f"]
-    launch_configuration = aws_launch_configuration.levelup-launch-configuration.name
+    vpc_zone_identifier = ["subnet-05c89a7f34226dece"]
+launch_template {
+    id      = aws_launch_template.levelup-launch-template.id
+    version = "$Latest"
+  }
+
     min_size = 1 ##minimum instance should be there
     max_size = 2
     health_check_grace_period = 200 ## after 200s of the continous instance failure then it will create a new instance
