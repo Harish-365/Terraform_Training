@@ -15,6 +15,7 @@ resource "aws_instance" "Myfirstinstance" {
       Name = "Myfirstinstance"
     }
   
+  ## remember to install awscli once this is done for checking the access to the aws s3.. we have install python before installing awscli since awscli is written in python
 }
 
 output "public_ip" {
