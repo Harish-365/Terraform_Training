@@ -7,7 +7,7 @@ resource "aws_iam_role" "levelup-role-s3" {
 	"Version": "2012-10-17",
 	"Statement": [
 		{
-			"Sid": "Roles to access the S3 bucket",
+			"Sid": "RolesToAccessS3Bucket",
 			"Effect": "Allow",
 			"Principal": {
             "Service": "ec2.amazonaws.com"},
