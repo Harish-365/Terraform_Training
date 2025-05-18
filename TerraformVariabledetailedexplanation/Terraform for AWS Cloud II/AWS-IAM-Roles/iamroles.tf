@@ -40,7 +40,7 @@ resource "aws_iam_role_policy" "levelup-role-policy" {
         {
             "Effect": "Allow",
             "Action": [
-                "s3:*",
+                "s3:*"
             ],
             "Resource": [
               "arn:aws:s3:::levelup-role-s3",
