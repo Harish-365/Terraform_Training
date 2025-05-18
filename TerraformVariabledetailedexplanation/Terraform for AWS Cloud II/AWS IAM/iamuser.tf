@@ -30,7 +30,7 @@ resource "aws_iam_group_membership" "admin-users" {
 
 resource "aws_iam_policy_attachment" "admin-user-attachment" {
   name = "admin-user-attachment"
-  groups = [aws_iam_group.admingroup]
+  groups = [aws_iam_group.admingroup.name]
   policy_arn = "arn:aws:iam::aws:policy/AdminstratorAccess"
 }
 
