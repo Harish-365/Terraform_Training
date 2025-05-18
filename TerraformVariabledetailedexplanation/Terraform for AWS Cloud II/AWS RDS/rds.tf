@@ -45,3 +45,5 @@ output "rds" {
   value = aws_db_instance.mariadb.endpoint
   
 }
+
+## once this is deployed, download the mysql-client and connect to the db using the host and the username nd password
