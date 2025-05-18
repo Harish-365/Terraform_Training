@@ -121,3 +121,8 @@ resource "aws_cloudwatch_metric_alarm" "levelup-cpu-alarm-scaledown" {
     actions_enabled = true
     alarm_actions = [aws_autoscaling_policy.levelup-cpu-policy-scaledown.arn]
 }
+
+
+## after all this steps we have to create some stress in the cpu for doing the testing
+## install stress
+## stress --cpu 2 --timeout 300
