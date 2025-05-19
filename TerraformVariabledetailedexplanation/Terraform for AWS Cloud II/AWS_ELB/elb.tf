@@ -2,7 +2,7 @@
 
 resource "aws_elb" "levelup-elb" {
     name = "levelup-elb"
-    subnets = [aws_subnet.levelupvpc-public-1, aws_subnet.levelupvpc-public-2]
+    subnets = [aws_subnet.levelupvpc-public-1.id, aws_subnet.levelupvpc-public-2.id]
     security_groups = [aws_security_group.levelup-securityelb.id]
     listener {
       instance_port = 80 ##"our ec2 instance"
