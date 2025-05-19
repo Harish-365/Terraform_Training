@@ -57,6 +57,6 @@ launch_template {
 }
 
 output "ELB" {
-  value = aws_elb.levelup-elb.dns_names
+  value = aws_elb.levelup-elb.dns_name
   
 }
