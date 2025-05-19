@@ -35,7 +35,7 @@ resource "aws_launch_template" "levelup-launch-template" {
 
 resource "aws_autoscaling_group" "levelup-autoscaling" {
     name = "levelup-autoscaling"
-    vpc_zone_identifier = [aws_subnet.levelupvpc-public-1, aws_subnet.levelupvpc-public-2]
+    vpc_zone_identifier = [aws_subnet.levelupvpc-public-1.id, aws_subnet.levelupvpc-public-2.id]
 launch_template {
     id      = aws_launch_template.levelup-launch-template.id
     version = "$Latest"
