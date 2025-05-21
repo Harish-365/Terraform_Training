@@ -12,9 +12,19 @@ resource "aws_vpc" "levelup-vpc" {
   
 }
 
+
+## internet gateway for public subnet
+
+resource "aws_internet_gateway" "levelup-igw" {
+    vpc_id = aws_vpc.levelup-vpc.id
+    tags = {
+      Environment = var.environment_tag
+    } 
+}
+
 ## resource for subnet
 
-resource "aws_subnet" "public-subnet" {
+resource "aws_subnet" "subnet_public" {
     vpc_id = aws_vpc.levelup-vpc.id
     cidr_block = var.cidr_subnet
     map_public_ip_on_launch = "true"
@@ -25,18 +35,6 @@ resource "aws_subnet" "public-subnet" {
     }
   
 }
-
-## internet gateway for public subnet
-
-resource "aws_internet_gateway" "levelup-igw" {
-    vpc_id = aws_vpc.levelup-vpc.id
-
-    tags = {
-      Environment = var.environment_tag
-    }
-  
-}
-
 ## route table for VPC
 
 resource "aws_route_table" "levelup-rtb-public" {
@@ -55,13 +53,13 @@ resource "aws_route_table" "levelup-rtb-public" {
 
 resource "aws_route_table_association" "levelup-rta-subnet-public" {
     route_table_id = aws_route_table.levelup-rtb-public.id
-    subnet_id = aws_subnet.public-subnet.id
+    subnet_id = aws_subnet.subnet_public.id
   
 }
 
 ## AWS security group
 
-resource "aws_security_group" "levelup-security" {
+resource "aws_security_group" "levelup_sg_22" {
     name = "levelup-security"
     vpc_id = aws_vpc.levelup-vpc.id
 

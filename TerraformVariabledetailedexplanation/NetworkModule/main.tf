@@ -20,8 +20,8 @@ resource "aws_key_pair" "levelup-key" {
 resource "aws_instance" "my-instance" {
     ami = var.instance_ami
     instance_type = var.instance_type
-    subnet_id = module.network.public_subnet_id
-    vpc_security_group_ids = ["${module.network.sg_22_id}"]
+    subnet_id = module.myvpc.public_subnet_id
+    vpc_security_group_ids = module.myvpc.sg_22_id
     key_name = aws_key_pair.levelup-key.key_name
 
     tags ={
