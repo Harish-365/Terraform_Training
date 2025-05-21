@@ -43,7 +43,7 @@ resource "aws_route_table" "levelup-rtb-public" {
     vpc_id = aws_vpc.levelup-vpc.id
     route {
         cidr_block = "0.0.0.0/0"
-        gateway_id = aws_internet_gateway.levelup-igw.owner_id
+        gateway_id = aws_internet_gateway.levelup-igw.id
 
     }
     tags = {
