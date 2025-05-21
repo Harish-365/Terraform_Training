@@ -4,10 +4,9 @@ output "vpc_id" {
 }
 
 output "public_subnet_id" {
-    value = aws_subnet.public-subnet.id
-  
+  value = aws_subnet.public_subnet.id
 }
 
 output "sg_22_id" {
-  value = ["aws_security_group.levelup-security.id"]
+  value = aws_security_group.sg_22.id
 }
