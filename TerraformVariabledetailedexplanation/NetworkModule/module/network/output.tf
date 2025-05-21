@@ -1,5 +1,5 @@
 output "vpc_id" {
-  value = aws_vpc.levelup_vpc.id
+  value = aws_vpc.levelup-vpc.id
 }
 output "public_subnet_id" {
   value = aws_subnet.subnet_public.id
