@@ -6,5 +6,5 @@ module "developmentqa-vpc" {
     enable_dns_hostnames = "true"
     enable_ipv6 = "false"
     vpcenvironment = "devqa"
-     
+    
 }
