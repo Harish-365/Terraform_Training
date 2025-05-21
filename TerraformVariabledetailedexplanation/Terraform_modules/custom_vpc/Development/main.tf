@@ -6,5 +6,6 @@ module "development-vpc" {
     enable_dns_hostnames = "true"
     enable_ipv6 = "true"
     vpcenvironment = "dev"
+    AWS_REGION = "us-east-2"
      
 }
