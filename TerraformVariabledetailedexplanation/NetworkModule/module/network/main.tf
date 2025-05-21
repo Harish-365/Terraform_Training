@@ -55,7 +55,7 @@ resource "aws_route_table" "levelup-rtb-public" {
 
 resource "aws_route_table_association" "levelup-rta-subnet-public" {
     route_table_id = aws_route_table.levelup-rtb-public.id
-    subnet_id = aws_subnet.public-subnet
+    subnet_id = aws_subnet.public-subnet.id
   
 }
 
