@@ -18,6 +18,6 @@ variable "instance_ami" {
 }
 
 variable "instance_type" {
-    default = "t2.micor"
+    default = "t2.micro"
   
 }
