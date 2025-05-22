@@ -4,6 +4,6 @@ variable "AWS_REGION" {
 }
 
 variable "environment" {
-    default = "development"
+    default = "production"
   
 }
