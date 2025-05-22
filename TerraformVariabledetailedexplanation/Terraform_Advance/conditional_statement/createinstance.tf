@@ -10,7 +10,7 @@ module "My-ec2-instance" {
     instance_type = "t2.micro"
     ami = "ami-00045d6bafc77e3dc"
     subnet_id = "subnet-05c89a7f34226dece"
-    instance_count = var.environment == "production" ? 2 : 1
+    count = var.environment == "production" ? 2 : 1
 
     tags = {
         Terraform = "true"
