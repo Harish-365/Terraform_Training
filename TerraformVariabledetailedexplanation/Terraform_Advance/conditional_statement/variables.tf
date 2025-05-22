@@ -3,7 +3,7 @@ variable "AWS_REGION" {
   
 }
 
-variable "Environment" {
+variable "environment" {
     default = "development"
   
 }
