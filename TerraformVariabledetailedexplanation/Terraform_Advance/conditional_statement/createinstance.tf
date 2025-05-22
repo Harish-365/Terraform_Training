@@ -6,7 +6,7 @@ provider "aws" {
 module "My-ec2-instance" {
     source = "github.com/terraform-aws-modules/terraform-aws-ec2-instance.git"
 
-    name_prefix = "my-cluster"
+    name_prefix = "my-cluster-$(count.index)"
     instance_type = "t2.micro"
     ami = "ami-00045d6bafc77e3dc"
     subnet_id = "subnet-05c89a7f34226dece"
