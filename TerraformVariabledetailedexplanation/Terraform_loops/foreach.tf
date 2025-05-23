@@ -8,3 +8,13 @@ resource "aws_instance" "Myforec2" {
 }
   
 }
+
+resource "aws_iam_user" "users" {
+    name = [for name in var.user_names: name] 
+  
+}
+
+output "user_name" {
+    value = aws_iam_user.users.name
+  
+}
