@@ -1,4 +1,4 @@
-module "level-vpc" {
+module "level_vpc" {
     source  = "terraform-aws-modules/vpc/aws"
 
     name = "vpc-${var.ENVIRONMENT}"
@@ -19,16 +19,16 @@ module "level-vpc" {
 ##output specific to custom VPC
 
 output "My_vpc_id" {
-    value = module.level-vpc.My_vpc_id
+    value = module.level_vpc.My_vpc_id
   
 }
 
 output "private_subnets" {
-    value = module.level-vpc.private_subnets
+    value = module.level_vpc.private_subnets
   
 }
 
 output "public_subnets" {
-    value = module.level-vpc.public_subnets
+    value = module.level_vpc.public_subnets
   
 }
