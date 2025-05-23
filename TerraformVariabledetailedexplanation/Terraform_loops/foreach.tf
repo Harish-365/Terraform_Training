@@ -5,16 +5,8 @@ resource "aws_instance" "Myforec2" {
     
     tags = {
         name = each.value
+    }
 }
-  
-}
-
-resource "aws_iam_user" "users" {
-    name = [for name in var.user_names: name] 
-  
-}
-
-output "user_name" {
-    value = aws_iam_user.users.name
-  
+output "user_names" {
+    value = [for user in var.user_names: user]  # Extracts names correctly
 }
