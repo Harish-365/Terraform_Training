@@ -14,7 +14,7 @@ module "prd-instances" {
     source = "../modules/createinstance"
     ENVIRONMENT = var.ENVIRONMENT
     AWS_REGION = var.AWS_REGION
-    vpc_id = module.prd-vpc.My_vpc_id
+    vpc_id = module.prd-vpc.my_vpc_id
     PUBLIC_SUBNETS = module.prd-vpc.public_subnets
 }
 
