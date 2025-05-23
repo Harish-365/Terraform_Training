@@ -16,11 +16,10 @@ variable "ENVIRONMENT" {
 }
 
 variable "AMIS" {
-    type = map 
-    default = {
-        us-east-1 = "ami-00045d6bafc77e3dc"
-        us-east-2 = "ami-05803413c51f242b7"
-    }  
+    type = map
+    default = {us-east-1 = "ami-0007c762ce4381a3f"
+               us-east-2 = "ami-05803413c51f242b7"
+    }
 }
 
 variable "AWS_REGION" {
