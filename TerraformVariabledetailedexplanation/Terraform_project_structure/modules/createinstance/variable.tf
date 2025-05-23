@@ -17,7 +17,7 @@ variable "ENVIRONMENT" {
 
 variable "AMIS" {
     type = map
-    default = {us-east-1 = "ami-04b3c39a8a1c62b76"
+    default = {us-east-1 = "ami-0f40c8f97004632f9"
                us-east-2 = "ami-05803413c51f242b7"
     }
 }
