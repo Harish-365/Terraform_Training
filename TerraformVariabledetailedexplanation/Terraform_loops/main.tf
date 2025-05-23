@@ -8,12 +8,12 @@ resource "aws_instance" "Myec2" {
     count = 3
     
     tags = {
-        Name = "my-cluster-${count.index}"
+        Name = var.instance_name[count.index]
     }
 }
 
 resource "aws_iam_user" "group-of-users" {
     count = 3
-    name = "user-${count.index}"
-  
+    name = var.user_names[count.index]
+ 
 }
