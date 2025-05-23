@@ -19,7 +19,7 @@ module "level_vpc" {
 ##output specific to custom VPC
 
 output "My_vpc_id" {
-    value = module.level_vpc.My_vpc_id
+    value = module.level_vpc.id
   
 }
 
