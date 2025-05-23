@@ -8,3 +8,9 @@ variable "instance_name" {
     default = [ "machine1", "machine2", "machine3" ]
 
 }
+
+variable "instance_forname" {
+    type = set(string)
+    default = [ "machine1", "machine2", "machine3" ]
+
+}
