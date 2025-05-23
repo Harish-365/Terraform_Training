@@ -28,7 +28,7 @@ variable "AWS_REGION" {
 }
 
 variable "PUBLIC_SUBNETS" {
-    type = list(string)
+    type = list
 }
 
 variable "INSTANCE_TYPE" {

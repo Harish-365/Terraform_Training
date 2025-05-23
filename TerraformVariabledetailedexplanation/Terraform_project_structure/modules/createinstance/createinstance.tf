@@ -33,7 +33,7 @@ resource "aws_security_group" "allow-ssh" {
 resource "aws_instance" "Myec2" {
     ami = lookup(var.AMIS, var.AWS_REGION)
     instance_type = var.INSTANCE_TYPE
-    subnet_id = element(var.PUBLIC_SUBNETS)
+    subnet_id = element(var.PUBLIC_SUBNETS, 0)
     vpc_security_group_ids = [aws_security_group.allow-ssh.id]
     key_name = aws_key_pair.levelup_key.key_name
 
