@@ -8,7 +8,7 @@ resource "aws_instance" "Myec2" {
     count = 3
     
     tags = {
-        Name = element(var.instance_name)
+        Name = element(var.instance_name, count.index)
     }
 }
 
