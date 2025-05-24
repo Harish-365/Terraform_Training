@@ -8,5 +8,5 @@ resource "aws_instance" "Myforec2" {
     }
 }
 output "user_names" {
-    value = [for user in var.user_names: user]  # Extracts names correctly
+    value = [for user in var.user_names: user] # Extracts names correctly
 }
