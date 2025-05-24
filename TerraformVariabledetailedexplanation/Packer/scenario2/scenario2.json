@@ -30,13 +30,13 @@
         {
             "type": "file",
             "source": "./helloworld.txt",
-            "destination": "/home/ubuntu"
+            "destination": "/home/ubuntu/"
         },
 
         {
             "type": "shell",
             "inline": [
-                "ls -al /home/ubuntu/",
+                "ls -al /home/ubuntu",
                 "cat /home/ubuntu/helloworld.txt"
             ]
         },
