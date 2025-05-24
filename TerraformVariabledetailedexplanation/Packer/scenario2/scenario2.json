@@ -43,7 +43,7 @@
 
         {
             "type": "shell",
-            "source": "./install_ngnix.sh"
+            "script": "./install_ngnix.sh"
 
         }
         
