@@ -1,3 +1,3 @@
 #!/bin/bash
 apt-get update
-apt-get install -y nginx dokcer.io
+apt-get install -y nginx docker.io
