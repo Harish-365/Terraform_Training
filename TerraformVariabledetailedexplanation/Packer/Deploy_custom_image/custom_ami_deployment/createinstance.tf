@@ -42,7 +42,7 @@ resource "aws_security_group" "allow-ssh" {
 
 
 resource "aws_instance" "Myinstance" {
-    ami = ""
+    ami = "ami-04bce0b4d85efda16"
     instance_type = var.instance_type
     subnet_id = element(module.MyVpc.public_subnets, 0)
     key_name = aws_key_pair.levelup_key.key_name
