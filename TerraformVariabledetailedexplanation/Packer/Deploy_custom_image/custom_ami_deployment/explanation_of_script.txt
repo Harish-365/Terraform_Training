@@ -1,0 +1,51 @@
+"provisioners": [       
+        {
+            "type": "shell",
+            "script": "./install_ngnix.sh",
+            "execute_command": "{{ .Vars }} sudo -E sh '{{ .Path }}'",
+            "pause_before": "10s"
+
+        }
+        
+    ]
+
+
+.Vars
+
+Yes, you got it! .Vars refers to the variables defined within your Terraform configuration—including those passed into a module.
+Where do these variables come from?
+- Variables you define in variables.tf or pass via -var in the command line.
+- Any default values set within the module.
+- Environment variables that Terraform automatically provides.
+How .Vars works in execute_command
+When used in your "execute_command":
+"execute_command": "{{ .Vars }} sudo -E sh '{{ .Path }}'"
+
+
+Terraform dynamically injects relevant variables before running the command.
+For example, if your Terraform module defines:
+variable "AWS_REGION" { default = "us-west-1" }
+variable "APP_ENV" { default = "production" }
+
+
+Then .Vars ensures these values are available to the script:
+AWS_REGION=us-west-1 APP_ENV=production sudo -E sh '/absolute/path/install_ngnix.sh'
+
+
+sudo -E 
+
+
+
+Ah, it looks like MY_VAR didn’t appear in the environment when running sudo env | grep MY_VAR. This confirms that sudo clears most environment variables by default, unless explicitly allowed.
+Why did this happen?
+- MY_VAR="hello" was set in your user session.
+- When running sudo env, the environment switches to root, and MY_VAR is not inherited.
+- Since env prints only the environment of the root user, MY_VAR isn't found.
+Solution? Use sudo -E
+
+
+.Path
+
+Why is .Path in Terraform an Absolute Path?
+Terraform copies the script (install_ngnix.sh) to a temporary directory (like /tmp/ on a remote server). .Path provides the full, absolute path, ensuring the script runs correctly regardless of where the command is executed.
+
