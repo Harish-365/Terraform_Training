@@ -45,6 +45,7 @@ resource "aws_instance" "Myinstance" {
     ami = "ami-04bce0b4d85efda16"
     instance_type = var.instance_type
     subnet_id = element(module.MyVpc.public_subnets, 0)
+    availability_zone = "${var.AWS_REGION}a"
     key_name = aws_key_pair.levelup_key.key_name
     vpc_security_group_ids = [aws_security_group.allow-ssh.id]
 
