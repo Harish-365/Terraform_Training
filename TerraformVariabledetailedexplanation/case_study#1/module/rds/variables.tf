@@ -26,7 +26,7 @@ variable "LEVELUP_RDS_ENGINE" {
 
 variable "LEVELUP_RDS_ENGINE_VERSION" {
     type = string
-    default = "8.0.34"
+    default = "5.7.44"
 }
 
 variable "DB_INSTANCE_CLASS" {
