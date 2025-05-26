@@ -26,12 +26,12 @@ variable "LEVELUP_RDS_ENGINE" {
 
 variable "LEVELUP_RDS_ENGINE_VERSION" {
     type = string
-    default = "5.7.44"
+    default = "8.0.33"
 }
 
 variable "DB_INSTANCE_CLASS" {
     type = string
-    default = "db.t2.micro"
+    default = "db.t3.micro"
   
 }
 
