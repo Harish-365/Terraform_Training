@@ -1,6 +1,6 @@
 # module "levelup-vpc" {
 #     source = "../module/vpc"
-
+#
 #     ENVIRONMENT = var.ENVIRONMENT
 #     AWS_REGION = var.AWS_REGION
   
@@ -12,14 +12,13 @@ module "levelup-rds" {
     ENVIRONMENT = var.ENVIRONMENT
     AWS_REGION = var.AWS_REGION
   
-  
 }
 
 ##security group for webserver
 
 resource "aws_security_group" "levelup_webservers" {
     name = "${var.ENVIRONMENT}-levelup-webservers"
-    vpc_id = module.levelup-vpc.my_vpc_id
+    vpc_id = var.vpc_id
     
     ingress {
         from_port = 22
@@ -127,7 +126,7 @@ resource "aws_lb_target_group" "load-balancer-target-group" {
     name = "load-balancer-target-group"
     port = 80   
     protocol = "HTTP"
-    vpc_id = module.levelup-vpc.my_vpc_id
+    vpc_id = var.vpc_id
 }
 
 ## adding http listener
