@@ -5,7 +5,7 @@ variable "AWS_REGION" {
 
 variable "ENVIRONMENT" {
     default = "development"
-  
+
 }
 
 variable "AMIS" {
@@ -14,4 +14,3 @@ variable "AMIS" {
                us-east-2 = "ami-05803413c51f242b7"
     }
 }
-

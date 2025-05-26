@@ -1,20 +1,10 @@
-variable "ENVIRONMENT" {
-    default = "development"
-  
-}
-
-variable "AWS_REGION" {
-    default = "us-east-1"
-  
-}
-
-variable "SSH_CIRD_WEB_SERVER" {
+variable "SSH_CIDR_WEB_SERVER" {
+    type = string
     default = "0.0.0.0/0"
 }
 
 variable "INSTANCE_TYPE" {
-    default = "t2.micro"
-  
+  default = "t2.micro"
 }
 
 variable "AMIS" {
@@ -24,9 +14,20 @@ variable "AMIS" {
     }
 }
 
+variable "AWS_REGION" {
+    type        = string
+    default     = "us-east-2"
+}
+
+variable "ENVIRONMENT" {
+  description = "AWS VPC Environment Name"
+  type        = string
+  default     = "Development"
+}
+
 variable "public_key_path" {
-    default = "~/.ssh/levelup_key.pub"
-  
+  description = "Public key path"
+  default = "~/.ssh/levelup_key.pub"
 }
 
 variable "vpc_private_subnet1" {
@@ -40,7 +41,6 @@ variable "vpc_private_subnet2" {
   type        = string
   default     = ""
 }
-
 
 variable "vpc_id" {
   description = "AWS VPC Environment Name"
