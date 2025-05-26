@@ -12,8 +12,8 @@ data "aws_availability_zones" "available" {
 resource "aws_vpc" "levelup_vpc" {
 
     cidr_block = var.LEVEL_VPC_CIDR_BLOCK
-    enable_dns_hostnames = true
-    enable_dns_support = true
+    enable_dns_hostnames = "true"
+    enable_dns_support = "true"
 
     tags = {
         Name = "${var.ENVIRONMENT}-vpc"
@@ -28,7 +28,7 @@ resource "aws_subnet" "levelup_vpc_private_subnet_1" {
     vpc_id = aws_vpc.levelup_vpc.id
     cidr_block = var.LEVEL_VPC_PRIVATE_SUBNET1_CIDR_BLOCK
     availability_zone = data.aws_availability_zones.available.names[0]
-    map_public_ip_on_launch = true
+    map_public_ip_on_launch = "true"
     tags = {
         Name = "${var.ENVIRONMENT}-levelup-vpc-private-subnet-1"
     }
@@ -41,7 +41,7 @@ resource "aws_subnet" "levelup_vpc_private_subnet_2" {
     vpc_id = aws_vpc.levelup_vpc.id
     cidr_block = var.LEVEL_VPC_PRIVATE_SUBNET2_CIDR_BLOCK
     availability_zone = data.aws_availability_zones.available.names[1]
-    map_public_ip_on_launch = true
+    map_public_ip_on_launch = "true"
 
     tags = {
       Name = "${var.ENVIRONMENT}-levelup-vpc-private-subnet-2"
@@ -55,7 +55,7 @@ resource "aws_subnet" "levelup_vpc_public_subnet_1" {
     vpc_id = aws_vpc.levelup_vpc.id
     cidr_block = var.LEVEL_VPC_PUBLIC_SUBNET1_CIDR_BLOCK
     availability_zone = data.aws_availability_zones.available.names[0]
-    map_public_ip_on_launch = true
+    map_public_ip_on_launch = "true"
 
     tags = {
         Name = "${var.ENVIRONMENT}-levelup-vpc-public-subnet-1"
