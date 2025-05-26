@@ -9,7 +9,7 @@ module "levelup-webserver" {
     source      = "./webserver"
 
     ENVIRONMENT = var.ENVIRONMENT
-    AWS_REGION  = var.
+    AWS_REGION  = var.AWS_REGION
 }
 ##Define provider
 
