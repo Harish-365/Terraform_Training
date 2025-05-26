@@ -1,7 +1,6 @@
 resource "aws_security_group" "levelup_webservers_alb" {
     name = "${var.ENVIRONMENT}-levelup-webservers-alb"
-    vpc_id = module.levelup-vpc.my_vpc_id
-    
+    vpc_id = var.vpc_id
     ingress {
         from_port = 80
         to_port = 80
