@@ -127,7 +127,7 @@ resource "aws_lb_target_group" "load-balancer-target-group" {
     name = "load-balancer-target-group"
     port = 80   
     protocol = "HTTP"
-    vpc_id = module.levelup-vpc.id
+    vpc_id = module.levelup-vpc.my_vpc_id
 }
 
 ## adding http listener
