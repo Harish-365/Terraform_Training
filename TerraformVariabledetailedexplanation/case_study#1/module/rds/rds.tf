@@ -1,12 +1,12 @@
-## call the VPC model here
+# call the VPC model here
 
-# module "levelup-vpc" {
-#     source = "../vpc"
+module "levelup-vpc" {
+    source = "../vpc"
 
-#     ENVIRONMENT = var.ENVIRONMENT
-#     AWS_REGION = var.AWS_REGION
+    ENVIRONMENT = var.ENVIRONMENT
+    AWS_REGION = var.AWS_REGION
   
-# }
+}
 
 ##Define subnet group for RDS service
 
