@@ -65,7 +65,7 @@ resource "aws_db_instance" "levelup-rds" {
     password = var.LEVELUP_RDS_PASSWORD
     vpc_security_group_ids = [aws_security_group.levelup-rds-sg.id]
     db_subnet_group_name = aws_db_subnet_group.levelup-rds-subnet-group.name
-    multi_az = false ## which means no retention db 
+    multi_az = "false" ## which means no retention db 
 }
 
 
