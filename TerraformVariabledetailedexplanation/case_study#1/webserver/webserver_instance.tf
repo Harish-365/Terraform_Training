@@ -103,7 +103,7 @@ resource "aws_autoscaling_group" "levelup_webautoscale" {
     desired_capacity = 1
     force_delete = true
     launch_template {
-        id = aws_launch_template.levelup-launch-template.id
+        id = aws_launch_template.levelup-launch-webserver.id
         version = "$Latest"
     }
     vpc_zone_identifier = ["${module.levelup-vpc.public_subnet1_id}", "${module.levelup-vpc.public_subnet2_id}"]
