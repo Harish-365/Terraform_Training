@@ -106,7 +106,7 @@ resource "aws_autoscaling_group" "levelup_webautoscale" {
         id = aws_launch_template.levelup-launch-template.id
         version = "$Latest"
     }
-    vpc_zone_identifier = ["${module.levelup_vpc_public_subnet1_id}", "${module.levelup_vpc_public_subnet2_id}"]
+    vpc_zone_identifier = ["${module.levelup_vpc_public_subnet1.id}", "${module.levelup_vpc_public_subnet2.id}"]
     target_group_arns = [aws_lb_target_group.load-balancer-target-group.arn]
 
 }
@@ -118,7 +118,7 @@ resource "aws_lb" "levelup-load-balancer" {
     internal = false
     load_balancer_type = "application"
     security_groups = [aws_security_group.levelup_webservers_alb.id]
-    subnets = ["${module.levelup_vpc_public_subnet1_id}", "${module.levelup_vpc_public_subnet2_id}"]
+    subnets = ["${module.levelup_vpc_public_subnet1.id}", "${module.levelup_vpc_public_subnet2.id}"]
     }
   
 ##adding target group
@@ -127,7 +127,7 @@ resource "aws_lb_target_group" "load-balancer-target-group" {
     name = "load-balancer-target-group"
     port = 80   
     protocol = "HTTP"
-    vpc_id = module.levelup-vpc.id
+    vpc_id = module.levelup_vpc.id
 }
 
 ## adding http listener
