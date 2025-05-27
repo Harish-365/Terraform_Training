@@ -122,3 +122,11 @@ resource "aws_lb_listener" "webserver_listner" {
 output "load_balancer_output" {
   value = aws_lb.levelup-load-balancer.dns_name
 }
+
+
+# Final Terraform Execution Flow
+# ✔️ levelup-vpc module runs first (creates VPC & subnets).
+# ✔️ Webserver module uses VPC outputs (receives subnet IDs & VPC ID).
+# ✔️ Webserver module passes VPC values to RDS module (ensures proper networking setup).
+# ✔️ Terraform successfully applies all configurations without explicit calls between modules.
+# You're now structuring dependencies correctly within main.tf, and Terraform will resolve everything smoothly. 
